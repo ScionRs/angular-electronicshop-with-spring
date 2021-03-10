@@ -19,7 +19,7 @@
 
 ### Загрузка проекта: 
 * Клонируйте или скачайте проект 
-`git clone https://github.com/ScionRs/ElectronicShop.git`
+`https://github.com/ScionRs/angular-electronicshop-with-spring.git`
 ### Импорт базы данных:  
 * Импортируйте базу данных **eshop** в свою среду
 ### Frontend  
