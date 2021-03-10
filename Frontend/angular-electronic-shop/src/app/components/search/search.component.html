@@ -1,0 +1,8 @@
+<div class="search_section">
+  <form class="search_content" onsubmit="return false;" method="GET">
+  <input class="search_input" #myInput type="text"
+         (keyup.enter)="doSearch(myInput.value)" name="search" placeholder="Search for data ..." />
+  <button (click)="doSearch(myInput.value)" class="btn btn-primary custom" type="submit">
+    Search
+  </button>
+</form></div>

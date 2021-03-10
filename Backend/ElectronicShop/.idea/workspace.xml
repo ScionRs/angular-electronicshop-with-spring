@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="58fb6e74-3fc6-4676-9d20-36dc47cbd26b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1ouvUmekXiXVyEVbw0jNs4tIdLN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.ravilov.ElectronicShop.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\ElectronicShop\Backend\ElectronicShop\src\main\java\ru\ravilov\ElectronicShop\dao" />
+      <recent name="C:\Users\user\Desktop\ElectronicShop\Backend\ElectronicShop\src\main\java\ru\ravilov\ElectronicShop\entity" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ElectronicShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ElectronicShop" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ravilov.ElectronicShop.ElectronicShopApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58fb6e74-3fc6-4676-9d20-36dc47cbd26b" name="Default Changelist" comment="" />
+      <created>1614149307035</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614149307035</updated>
+      <workItem from="1614149309326" duration="4433000" />
+      <workItem from="1614241929976" duration="650000" />
+      <workItem from="1614269853689" duration="1344000" />
+      <workItem from="1614278450231" duration="708000" />
+      <workItem from="1614509715397" duration="1855000" />
+      <workItem from="1614761499440" duration="1564000" />
+      <workItem from="1614885560130" duration="1012000" />
+      <workItem from="1614974602155" duration="237000" />
+      <workItem from="1615017304987" duration="672000" />
+      <workItem from="1615038706391" duration="767000" />
+      <workItem from="1615364612982" duration="1015000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

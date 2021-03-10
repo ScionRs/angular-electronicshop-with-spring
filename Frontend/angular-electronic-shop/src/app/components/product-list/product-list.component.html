@@ -1,0 +1,28 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+
+        <!-- loop over the collection of products -->
+
+        <div class="card col-md-2 custom-card" *ngFor="let tempProduct of products">
+            <a routerLink="/products/{{tempProduct.id}}">
+            <img src="{{ tempProduct.imageUrl }}" class="card-img-top img-responsive">
+            </a>
+            <div class="card-body">
+            <a routerLink="/products/{{tempProduct.id}}">
+            <h5>{{ tempProduct.name }}</h5>
+            </a>
+              <div class="price"><h5>{{ tempProduct.price }}</h5></div>
+            </div>
+            <button (click)="addToCart(tempProduct)" class="shop-card">Добавить в корзину<i class="fas fa-shopping-cart card-basket"></i></button>
+        </div>
+
+        <div *ngIf ="products?.length == 0" class="alert alert-warning col-md-12" role="alert">
+          No products found.
+        </div>
+
+        </div>
+    </div>
+  </div>
+</div>

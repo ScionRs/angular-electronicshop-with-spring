@@ -1,0 +1,19 @@
+<div class="detail-section">
+  <div class="container">
+    <h1 class="product_name">{{product.name}}</h1>
+    <div class="row">
+      <div>
+    <img class="img_details" src="{{ product.imageUrl }}">
+      </div>
+      <div class="right_section">
+        <h3 class="price_title">Цена:</h3>
+        <h3 class="price">{{product.price}}₽</h3>
+        <button class="shop-card"><a href="#">Добавить в корзину<i class="fas fa-shopping-cart card-basket"></i></a></button>
+      </div>
+    </div>
+    <h3 class="description_title">Описание</h3>
+    <p>{{product.description}}</p>
+
+  </div>
+</div>
+
