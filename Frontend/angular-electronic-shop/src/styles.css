@@ -228,15 +228,5 @@ footer{
     flex-direction: column;
   }
 
-  footer{
-    width: 100%;
-    background-color: blue;
-    color: white;
-    height: auto;
-  }
-
-  .footer_custom{
-    padding-top: 0;
-  }
 
 }
