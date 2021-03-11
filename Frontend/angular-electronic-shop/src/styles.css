@@ -173,6 +173,17 @@ a:hover{
   text-decoration: none;
 }
 
+footer{
+  width: 100%;
+  background-color: blue;
+  color: white;
+  height: 120px;
+}
+
+.footer_custom{
+  padding-top: 30px;
+}
+
 @media screen and (max-width: 900px){
   .header_top{
     flex-direction: column;
@@ -217,6 +228,15 @@ a:hover{
     flex-direction: column;
   }
 
+  footer{
+    width: 100%;
+    background-color: blue;
+    color: white;
+    height: auto;
+  }
 
+  .footer_custom{
+    padding-top: 0;
+  }
 
 }

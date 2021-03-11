@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58fb6e74-3fc6-4676-9d20-36dc47cbd26b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +75,9 @@
       <workItem from="1614974602155" duration="237000" />
       <workItem from="1615017304987" duration="672000" />
       <workItem from="1615038706391" duration="767000" />
-      <workItem from="1615364612982" duration="1015000" />
+      <workItem from="1615364612982" duration="1321000" />
+      <workItem from="1615396786000" duration="312000" />
+      <workItem from="1615455997639" duration="672000" />
     </task>
     <servers />
   </component>
