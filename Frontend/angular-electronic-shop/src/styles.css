@@ -173,15 +173,38 @@ a:hover{
   text-decoration: none;
 }
 
+/* Basket Detail */
+
+.order_card{
+  border-radius: 40px;
+  box-shadow: 3px 3px 5px #5A6268;
+  margin: 30px 0;
+}
+
+.right_section_text{
+  margin-top: 50px;
+}
+
+.right_section_text p{
+  font-size: 24px;
+}
+
+.right_section_text span{
+  font-weight: bold;
+}
+
+/* Footer Section */
+
 footer{
   width: 100%;
   background-color: blue;
   color: white;
   height: 120px;
+  padding: 10px;
 }
 
 .footer_custom{
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 @media screen and (max-width: 900px){

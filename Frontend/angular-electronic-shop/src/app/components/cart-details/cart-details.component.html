@@ -1,4 +1,4 @@
-<div class="main-content">
+<!-- <div class="main-content">
   <div class="section-content search-content-p30">
     <div class="container-fluid">
       <table class="table table-bordered">
@@ -25,5 +25,22 @@
         </tr>
       </table>
     </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="order_card" *ngFor="let cartItem of cartItems">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{cartItem.imageUrl}}" class="card-img-top img-responsive">
+    </div>
+    <div class="col-md-6">
+      <div class="right_section_text">
+      <p>Название: <span>{{cartItem.name}}</span></p>
+      <p>Количество: <span>{{cartItem.quantity}}</span></p>
+        <p>Общая стоимость: <span>{{cartItem.quantity * cartItem.price}}</span></p>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
