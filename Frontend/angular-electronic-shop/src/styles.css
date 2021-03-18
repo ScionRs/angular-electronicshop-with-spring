@@ -251,5 +251,12 @@ footer{
     flex-direction: column;
   }
 
+  footer{
+    height: auto;
+  }
+
+  .footer_custom{
+    padding-top: 0;
+  }
 
 }
