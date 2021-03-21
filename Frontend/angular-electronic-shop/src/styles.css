@@ -193,6 +193,12 @@ a:hover{
   font-weight: bold;
 }
 
+.total_info{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Footer Section */
 
 footer{
