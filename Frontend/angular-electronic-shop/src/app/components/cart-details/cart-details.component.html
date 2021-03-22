@@ -1,32 +1,4 @@
-<!-- <div class="main-content">
-  <div class="section-content search-content-p30">
-    <div class="container-fluid">
-      <table class="table table-bordered">
-        <tr>
-          <th width="20%">Фотография</th>
-          <th width="50%">Товар</th>
-          <th width="30%">Количество</th>
-        </tr>
-        <tr *ngFor="let tempCartItem of cartItems">
-          <td>
-            <img src="{{tempCartItem.imageUrl}}" class="card-img-top img-responsive">
-          </td>
-          <td>
-            <p>{{tempCartItem.name}}</p>
-            <p>{{tempCartItem.price}}</p>
-          </td>
-          <td>
-            <div class="items">
-              <label>{{tempCartItem.quantity}}</label>
-              <br>
-              <label>{{tempCartItem.quantity * tempCartItem.price}}</label>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div> -->
+
 
 <div class="container">
   <div class="order_card" *ngFor="let cartItem of cartItems">
@@ -46,5 +18,6 @@
   <div class="offset-md-6 col-md-6 total_info">
     <p>Общее количество: {{totalQuantity}}</p>
     <p>Итоговая цена: {{totalPrice}}</p>
+    <a routerLink="/checkout">Checkout</a>
   </div>
 </div>

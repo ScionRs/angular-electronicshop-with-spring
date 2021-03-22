@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="58fb6e74-3fc6-4676-9d20-36dc47cbd26b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravilov/ElectronicShop/ElectronicShopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravilov/ElectronicShop/ElectronicShopApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravilov/ElectronicShop/config/MyDataRestConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/ravilov/ElectronicShop/ElectronicShopApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/ravilov/ElectronicShop/ElectronicShopApplication.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +83,9 @@
       <workItem from="1616085429475" duration="9000" />
       <workItem from="1616264792088" duration="46000" />
       <workItem from="1616267773314" duration="668000" />
-      <workItem from="1616350642868" duration="593000" />
+      <workItem from="1616350642868" duration="824000" />
+      <workItem from="1616415125922" duration="710000" />
+      <workItem from="1616420118081" duration="627000" />
     </task>
     <servers />
   </component>
