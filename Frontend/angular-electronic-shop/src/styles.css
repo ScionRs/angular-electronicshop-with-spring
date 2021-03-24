@@ -199,6 +199,111 @@ a:hover{
   text-align: center;
 }
 
+
+/*Checkout Section */
+.checkout_form{
+  box-shadow: 3px 3px 5px #5A6268;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+.checkout_form h3{
+  margin-bottom: 30px;
+}
+.checkout_form input{
+  width: 800px;
+}
+
+.checkbox_custom{
+  display: block;
+  margin: 0 0 10px 0;
+  line-height: 22px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+.checkbox_custom input[type=checkbox] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+.checkbox_custom span {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 35px;
+  line-height: 22px;
+}
+.checkbox_custom span:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #2B7335;
+  box-shadow: inset 0 0 3px #8a8a8a;
+}
+
+/* Checked */
+.checkbox_custom input[type=checkbox] + span:after {
+  content: "";
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.checkbox_custom input[type=checkbox]:checked + span:after {
+  content: "✓";
+  color: green;
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  opacity: 1;
+}
+
+/* Focus */
+.focused span:before {
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Hover */
+.checkbox_custom span:hover:after {
+  filter: brightness(110%);
+}
+
+/* Active */
+.checkbox_custom span:active:before,
+.checkbox_custom span:active:after {
+  filter: brightness(80%);
+}
+
+/* Disabled */
+.checkbox_custom input[type=checkbox]:disabled + span {
+  color: #666;
+  cursor: default;
+}
+.checkbox_custom input[type=checkbox]:disabled + span:before,
+.checkbox_custom input[type=checkbox]:disabled + span:after {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.btn_checkout{
+  margin-bottom: 30px;
+}
+.btn_checkout button{
+  border-radius: 10px;
+  background-color: #0069D9;
+  color: white;
+  outline: none;
+  width: 120px;
+  height: 40px;
+  border: 0;
+  margin: 0 auto;
+}
 /* Footer Section */
 
 footer{
