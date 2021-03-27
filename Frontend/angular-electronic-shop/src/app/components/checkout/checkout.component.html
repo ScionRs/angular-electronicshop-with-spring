@@ -1,0 +1,214 @@
+
+<div class="container">
+  <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+   <div formGroupName="customer" class="checkout_form">
+     <h3>Покупатель</h3>
+     <div class="row">
+       <div class="col-md-2">
+         <p>Имя:</p>
+       </div>
+       <div class="col-md-9">
+         <input formControlName="firstName" type="text">
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="col-md-2">
+         <p>Фамилия:</p>
+       </div>
+       <div class="col-md-9">
+         <input formControlName="lastName" type="text">
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="col-md-2">
+         <p>Email:</p>
+       </div>
+       <div class="col-md-9">
+         <input formControlName="email" type="text">
+       </div>
+     </div>
+
+   </div>
+
+    <div formGroupName="shippingAddress" class="checkout_form">
+      <h3>Адрес Доставки</h3>
+      <div class="row">
+        <div class="col-md-2">
+          <p>Страна:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="country" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Регион:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="state" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Город:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="city" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Улица:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="street" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Индекс:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="index" type="text">
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <label  class="checkbox_custom">
+        <input type="checkbox" (change)="copyShippingAddressToBillingAddress($event)">
+         <span>Адрес доставки совпадает с платежным</span>
+      </label>
+    </div>
+
+    <div formGroupName="billingAddress" class="checkout_form">
+      <h3>Платежный адрес</h3>
+      <div class="row">
+        <div class="col-md-2">
+          <p>Страна:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="country" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Регион:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="state" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Город:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="city" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Улица:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="street" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Индекс:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="index" type="text">
+        </div>
+      </div>
+
+    </div>
+
+    <div formGroupName="creditCard" class="checkout_form">
+      <h3>Реквизиты карты</h3>
+      <div class="row">
+        <div class="col-md-2">
+          <p>Тип карты:</p>
+        </div>
+        <div class="col-md-9">
+          <select formControlName="cardType">
+            <option>Visa</option>
+            <option>Mastercard</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Имя держателя:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="namedOnCard" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Номер карты:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="cardNumber" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>CCV:</p>
+        </div>
+        <div class="col-md-9">
+          <input formControlName="securityCode" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Действительная до(месяц):</p>
+        </div>
+          <div class="col-md-9">
+            <select formControlName="expirationMonth">
+              <option *ngFor="let month of creditCardMonths">{{month}}</option>
+            </select>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <p>Действительна до(год):</p>
+        </div>
+          <div class="col-md-9">
+            <select formControlName="expirationYear" (change)="handleMonthsAndYears()">
+              <option *ngFor="let year of creditCardYears">{{year}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  </form>
+
+  <div>
+    <h3>Итог:</h3>
+    <p>Общее количество: {{totalQuantity}}</p>
+    <p>Итоговая цена: {{totalPrice}}₽</p>
+  </div>
+
+  <div class="btn_checkout justify-content-center">
+    <button type="submit">Купить</button>
+  </div>
+</div>
