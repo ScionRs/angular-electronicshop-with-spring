@@ -13,6 +13,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1ouvUmekXiXVyEVbw0jNs4tIdLN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -86,7 +93,9 @@
       <workItem from="1616350642868" duration="824000" />
       <workItem from="1616415125922" duration="710000" />
       <workItem from="1616420118081" duration="627000" />
-      <workItem from="1616569951809" duration="679000" />
+      <workItem from="1616569951809" duration="681000" />
+      <workItem from="1616576482624" duration="145000" />
+      <workItem from="1616833714867" duration="1237000" />
     </task>
     <servers />
   </component>
