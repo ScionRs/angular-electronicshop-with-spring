@@ -322,6 +322,10 @@ footer{
   padding-top: 20px;
 }
 
+.validation_error{
+  color:red;
+}
+
 @media screen and (max-width: 900px){
   .header_top{
     flex-direction: column;

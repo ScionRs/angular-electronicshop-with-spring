@@ -9,6 +9,10 @@
        </div>
        <div class="col-md-9">
          <input formControlName="firstName" type="text">
+         <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"  class="validation_error">
+           <div *ngIf="firstName.errors.required || firstName.errors.notOnlyWhiteSpace">Поле не должно быть пустым.</div>
+           <div *ngIf="firstName.errors.minlength">Минимальная длина 2 знака.</div>
+         </div>
        </div>
      </div>
 
@@ -18,6 +22,10 @@
        </div>
        <div class="col-md-9">
          <input formControlName="lastName" type="text">
+         <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="validation_error">
+           <div *ngIf="lastName.errors.required || lastName.errors.notOnlyWhiteSpace">Поле не должно быть пустым.</div>
+           <div *ngIf="lastName.errors.minlength">Минимальная длина 2 знака.</div>
+         </div>
        </div>
      </div>
 
@@ -27,6 +35,10 @@
        </div>
        <div class="col-md-9">
          <input formControlName="email" type="text">
+         <div *ngIf="firstName.invalid && (email.dirty || email.touched)"  class="validation_error">
+           <div *ngIf="firstName.errors.required">Поле не должно быть пустым.</div>
+           <div *ngIf="firstName.errors.email">Наличие @ обязательно.</div>
+         </div>
        </div>
      </div>
 
@@ -44,6 +56,9 @@
               {{ country.name }}
             </option>
           </select>
+          <div *ngIf="shippingAddressCountry.invalid && (shippingAddressCountry.dirty || shippingAddressCountry.touched)" class="validation_error">
+            <div *ngIf="shippingAddressCountry.errors.required">Поле не должно быть пустым.</div>
+          </div>
         </div>
       </div>
 
@@ -57,6 +72,9 @@
               {{ state.name }}
             </option>
           </select>
+          <div *ngIf="shippingAddressState.invalid && (shippingAddressState.dirty || shippingAddressState.touched)" class="validation_error">
+            <div *ngIf="shippingAddressState.errors.required">Поле не должно быть пустым.</div>
+          </div>
         </div>
       </div>
 
@@ -66,6 +84,10 @@
         </div>
         <div class="col-md-9">
           <input formControlName="city" type="text">
+          <div *ngIf="shippingAddressCity.invalid && (shippingAddressCity.dirty || shippingAddressCity.touched)"  class="validation_error">
+            <div *ngIf="shippingAddressCity.errors.required || shippingAddressCity.errors.notOnlyWhiteSpace">Поле не должно быть пустым.</div>
+            <div *ngIf="shippingAddressCity.errors.minlength">Минимальная длина 2 знака.</div>
+          </div>
         </div>
       </div>
 
@@ -75,6 +97,10 @@
         </div>
         <div class="col-md-9">
           <input formControlName="street" type="text">
+          <div *ngIf="shippingAddressStreet.invalid && (shippingAddressStreet.dirty || shippingAddressStreet.touched)"  class="validation_error">
+            <div *ngIf="shippingAddressStreet.errors.required || shippingAddressStreet.errors.notOnlyWhiteSpace">Поле не должно быть пустым.</div>
+            <div *ngIf="shippingAddressStreet.errors.minlength">Минимальная длина 2 знака.</div>
+          </div>
         </div>
       </div>
 
@@ -84,6 +110,10 @@
         </div>
         <div class="col-md-9">
           <input formControlName="index" type="text">
+          <div *ngIf="shippingAddressIndex.invalid && (shippingAddressIndex.dirty || shippingAddressIndex.touched)"  class="validation_error">
+            <div *ngIf="shippingAddressIndex.errors.required || shippingAddressIndex.errors.notOnlyWhiteSpace">Поле не должно быть пустым.</div>
+            <div *ngIf="shippingAddressIndex.errors.minlength">Минимальная длина 2 знака.</div>
+          </div>
         </div>
       </div>
 
@@ -108,6 +138,9 @@
               {{ country.name }}
             </option>
           </select>
+          <div *ngIf="billingAddressCountry.invalid && (billingAddressCountry.dirty || billingAddressCountry.touched)"  class="validation_error">
+            <div *ngIf="billingAddressCountry.errors.required">Поле не должно быть пустым.</div>
+          </div>
         </div>
       </div>
 
@@ -121,6 +154,9 @@
               {{ state.name }}
             </option>
           </select>
+          <div *ngIf="billingAddressState.invalid && (billingAddressState.dirty || billingAddressState.touched)"  class="validation_error">
+            <div *ngIf="billingAddressState.errors.required">Поле не должно быть пустым.</div>
+          </div>
         </div>
       </div>
 
@@ -130,6 +166,10 @@
         </div>
         <div class="col-md-9">
           <input formControlName="city" type="text">
+          <div *ngIf="billingAddressCity.invalid && (billingAddressCity.dirty || billingAddressCity.touched)"  class="validation_error">
+            <div *ngIf="billingAddressCity.errors.required || billingAddressCity.errors.notOnlyWhiteSpace">Поле не должно быть пустым.</div>
+            <div *ngIf="billingAddressCity.errors.minlength">Минимальная длина 2 знака.</div>
+          </div>
         </div>
       </div>
 
@@ -139,6 +179,10 @@
         </div>
         <div class="col-md-9">
           <input formControlName="street" type="text">
+          <div *ngIf="billingAddressStreet.invalid && (billingAddressStreet.dirty || billingAddressStreet.touched)"  class="validation_error">
+            <div *ngIf="billingAddressStreet.errors.required || billingAddressStreet.errors.notOnlyWhiteSpace">Поле не должно быть пустым.</div>
+            <div *ngIf="billingAddressStreet.errors.minlength">Минимальная длина 2 знака.</div>
+          </div>
         </div>
       </div>
 
@@ -148,6 +192,10 @@
         </div>
         <div class="col-md-9">
           <input formControlName="index" type="text">
+          <div *ngIf="billingAddressIndex.invalid && (billingAddressIndex.dirty || billingAddressIndex.touched)"  class="validation_error">
+            <div *ngIf="billingAddressIndex.errors.required || billingAddressIndex.errors.notOnlyWhiteSpace">Поле не должно быть пустым.</div>
+            <div *ngIf="billingAddressIndex.errors.minlength">Минимальная длина 2 знака.</div>
+          </div>
         </div>
       </div>
 
