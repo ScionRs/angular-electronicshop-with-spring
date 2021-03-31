@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="58fb6e74-3fc6-4676-9d20-36dc47cbd26b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravilov/ElectronicShop/config/MyDataRestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravilov/ElectronicShop/config/MyDataRestConfig.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +22,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1ouvUmekXiXVyEVbw0jNs4tIdLN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -29,13 +32,15 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/ru/ravilov/ElectronicShop/dao" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.ravilov.ElectronicShop.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tim0357\Desktop\angular-electronicshop-with-spring\Backend\ElectronicShop\src\main\java\ru\ravilov\ElectronicShop\dao" />
+      <recent name="C:\Users\Tim0357\Desktop\angular-electronicshop-with-spring\Backend\ElectronicShop\src\main\java\ru\ravilov\ElectronicShop\entity" />
       <recent name="C:\Users\user\Desktop\ElectronicShop\Backend\ElectronicShop\src\main\java\ru\ravilov\ElectronicShop\dao" />
       <recent name="C:\Users\user\Desktop\ElectronicShop\Backend\ElectronicShop\src\main\java\ru\ravilov\ElectronicShop\entity" />
     </key>
@@ -96,6 +101,7 @@
       <workItem from="1616569951809" duration="681000" />
       <workItem from="1616576482624" duration="145000" />
       <workItem from="1616833714867" duration="1237000" />
+      <workItem from="1617164533292" duration="1085000" />
     </task>
     <servers />
   </component>
