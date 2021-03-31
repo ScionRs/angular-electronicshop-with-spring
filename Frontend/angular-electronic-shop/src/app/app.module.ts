@@ -5,15 +5,16 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 import {RouterModule, Routes} from "@angular/router";
-
-import {ProductService} from "./services/product.service";
-import {HttpClientModule} from "@angular/common/http";
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { CartStatusComponent } from './components/cart-status/cart-status.component';
-import { SearchComponent } from './components/search/search.component';
-import { CartDetailsComponent } from './components/cart-details/cart-details.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
+import {CartDetailsComponent} from './components/cart-details/cart-details.component';
+import {CheckoutComponent} from './components/checkout/checkout.component';
+import {ProductDetailsComponent} from './components/product-details/product-details.component';
+import {SearchComponent} from './components/search/search.component';
+import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ProductService} from './services/product.service';
+import {CartStatusComponent} from './components/cart-status/cart-status.component';
+
+
 
 const routes: Routes = [
   {path: 'cart-details', component: CartDetailsComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
     CartStatusComponent,
     SearchComponent,
     CartDetailsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+
   ],
   imports: [
     RouterModule.forRoot(routes),

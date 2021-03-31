@@ -39,7 +39,11 @@
           <p>Страна:</p>
         </div>
         <div class="col-md-9">
-          <input formControlName="country" type="text">
+          <select formControlName="country" (change)="getStates('shippingAddress')">
+            <option *ngFor="let country of countries" [ngValue]="country">
+              {{ country.name }}
+            </option>
+          </select>
         </div>
       </div>
 
@@ -48,7 +52,11 @@
           <p>Регион:</p>
         </div>
         <div class="col-md-9">
-          <input formControlName="state" type="text">
+          <select formControlName="state">
+            <option *ngFor="let state of shippingAddressStates" [ngValue]="state">
+              {{ state.name }}
+            </option>
+          </select>
         </div>
       </div>
 
@@ -95,7 +103,11 @@
           <p>Страна:</p>
         </div>
         <div class="col-md-9">
-          <input formControlName="country" type="text">
+          <select formControlName="country" (change)="getStates('billingAddress')">
+            <option *ngFor="let country of countries" [ngValue]="country">
+              {{ country.name }}
+            </option>
+          </select>
         </div>
       </div>
 
@@ -104,7 +116,11 @@
           <p>Регион:</p>
         </div>
         <div class="col-md-9">
-          <input formControlName="state" type="text">
+          <select formControlName="state">
+            <option *ngFor="let state of billingAddressStates" [ngValue]="state">
+              {{ state.name }}
+            </option>
+          </select>
         </div>
       </div>
 

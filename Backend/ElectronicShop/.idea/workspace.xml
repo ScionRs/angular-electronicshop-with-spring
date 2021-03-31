@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="58fb6e74-3fc6-4676-9d20-36dc47cbd26b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ravilov/ElectronicShop/config/MyDataRestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ravilov/ElectronicShop/config/MyDataRestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/ravilov/ElectronicShop/config/MyDataRestConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/ravilov/ElectronicShop/config/MyDataRestConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop/src/app/components/checkout/checkout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop/src/app/components/checkout/checkout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop/src/app/components/checkout/checkout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop/src/app/components/checkout/checkout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop/src/app/services/form.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/angular-electronic-shop/src/app/services/form.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +105,7 @@
       <workItem from="1616569951809" duration="681000" />
       <workItem from="1616576482624" duration="145000" />
       <workItem from="1616833714867" duration="1237000" />
-      <workItem from="1617164533292" duration="1085000" />
+      <workItem from="1617164533292" duration="2894000" />
     </task>
     <servers />
   </component>
