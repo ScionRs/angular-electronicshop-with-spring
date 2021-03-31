@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Хост:                         127.0.0.1
--- Версия сервера:               10.5.8-MariaDB - mariadb.org binary distribution
+-- Версия сервера:               10.5.9-MariaDB - mariadb.org binary distribution
 -- Операционная система:         Win64
 -- HeidiSQL Версия:              11.0.0.5919
 -- --------------------------------------------------------
@@ -15,6 +15,36 @@
 -- Дамп структуры базы данных eshop
 CREATE DATABASE IF NOT EXISTS `eshop` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci */;
 USE `eshop`;
+
+-- Дамп структуры для таблица eshop.country
+CREATE TABLE IF NOT EXISTS `country` (
+  `id` bigint(20) NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- Дамп данных таблицы eshop.country: ~5 rows (приблизительно)
+/*!40000 ALTER TABLE `country` DISABLE KEYS */;
+INSERT INTO `country` (`id`, `code`, `name`, `image`) VALUES
+	(1, 'RU', 'Россия', 'assets/images/country/Russia.png'),
+	(2, 'BLR', 'Беларусь', 'assets/images/country/Belarus.png'),
+	(3, 'KZ', 'Казахстан', 'assets/images/country/Kazakhstan.png'),
+	(4, 'MD', 'Молдавия', 'assets/images/country/Moldova.png'),
+	(5, 'UA', 'Украина', 'assets/images/country/Ukraine.png');
+/*!40000 ALTER TABLE `country` ENABLE KEYS */;
+
+-- Дамп структуры для таблица eshop.hibernate_sequence
+CREATE TABLE IF NOT EXISTS `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- Дамп данных таблицы eshop.hibernate_sequence: ~1 rows (приблизительно)
+/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
+INSERT INTO `hibernate_sequence` (`next_val`) VALUES
+	(1);
+/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 
 -- Дамп структуры для таблица eshop.product
 CREATE TABLE IF NOT EXISTS `product` (
@@ -80,6 +110,40 @@ INSERT INTO `product_category` (`id`, `category_name`) VALUES
 	(3, 'Ноутбуки'),
 	(4, 'Электронные книги');
 /*!40000 ALTER TABLE `product_category` ENABLE KEYS */;
+
+-- Дамп структуры для таблица eshop.state
+CREATE TABLE IF NOT EXISTS `state` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `country_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKghic7mqjt6qb9vq7up7awu0er` (`country_id`),
+  CONSTRAINT `FKghic7mqjt6qb9vq7up7awu0er` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- Дамп данных таблицы eshop.state: ~19 rows (приблизительно)
+/*!40000 ALTER TABLE `state` DISABLE KEYS */;
+INSERT INTO `state` (`id`, `name`, `country_id`) VALUES
+	(1, 'Московская область', 1),
+	(2, 'Белогородская область', 1),
+	(3, 'Брянская область', 1),
+	(4, 'Владимирская область', 1),
+	(5, 'Республика Татарстан', 1),
+	(6, 'Республика Башкорстан', 1),
+	(7, 'Минская область', 2),
+	(8, 'Гомельская область', 2),
+	(9, 'Брестская область', 2),
+	(10, 'Алматинская область', 3),
+	(11, 'Акмолинская область', 3),
+	(12, 'Актюбинская область', 3),
+	(13, 'Кишинев', 4),
+	(14, 'Калаширский район', 4),
+	(15, 'Бричанский район', 4),
+	(16, 'Киевская область', 5),
+	(17, 'Черкасская область', 5),
+	(18, 'Днепропетровская область', 5),
+	(19, 'Москва', 1);
+/*!40000 ALTER TABLE `state` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
