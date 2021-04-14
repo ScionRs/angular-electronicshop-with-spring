@@ -199,6 +199,18 @@ a:hover{
   text-align: center;
 }
 
+.checkout_link{
+  display: inline-block;
+  padding: 15px 50px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 30px !important;
+}
+
+.checkout_link:hover{
+  color: white;
+}
 
 /*Checkout Section */
 .checkout_form{
