@@ -212,6 +212,9 @@
             <option>Visa</option>
             <option>Mastercard</option>
           </select>
+          <div *ngIf="creditCardType.invalid && (creditCardType.dirty || creditCardType.touched)"  class="validation_error">
+            <div *ngIf="creditCardType.errors.required">Поле не должно быть пустым.</div>
+          </div>
         </div>
       </div>
 
@@ -230,6 +233,10 @@
         </div>
         <div class="col-md-9">
           <input formControlName="cardNumber" type="text">
+          <div *ngIf="creditCardNumber.invalid && (creditCardNumber.dirty || creditCardNumber.touched)"  class="validation_error">
+            <div *ngIf="creditCardSecurityCode.errors.required">Поле не должно быть пустым.</div>
+            <div *ngIf="creditCardNumber.errors.pattern">Минимум 16 знаков.</div>
+          </div>
         </div>
       </div>
 
@@ -239,6 +246,10 @@
         </div>
         <div class="col-md-9">
           <input formControlName="securityCode" type="text">
+          <div *ngIf="creditCardSecurityCode.invalid && (creditCardSecurityCode.dirty || creditCardSecurityCode.touched)"  class="validation_error">
+            <div *ngIf="creditCardSecurityCode.errors.required">Поле не должно быть пустым.</div>
+            <div *ngIf="creditCardSecurityCode.errors.pattern">Минимум 3 знака.</div>
+          </div>
         </div>
       </div>
 

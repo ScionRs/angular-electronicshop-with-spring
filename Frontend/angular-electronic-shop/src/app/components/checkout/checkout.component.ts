@@ -47,10 +47,10 @@ export class CheckoutComponent implements OnInit {
         index: new FormControl('',[Validators.required, Validators.minLength(2), CustomValidators.notOnlyWhiteSpace])
       }),
       creditCard: this.formBuilder.group({
-        cardType: [''],
-        namedOnCard: [''],
-        cardNumber: [''],
-        securityCode: [''],
+        cardType: new FormControl('',[Validators.required]),
+        namedOnCard: new FormControl('',[Validators.required]),
+        cardNumber: new FormControl('',[Validators.required, Validators.pattern('[0-9]{16}')]),
+        securityCode: new FormControl('',[Validators.required, Validators.pattern('[0-9]{3}')]),
         expirationMonth: [''],
         expirationYear: [''],
       })
@@ -96,6 +96,11 @@ export class CheckoutComponent implements OnInit {
   get billingAddressState(){return this.checkoutFormGroup.get('billingAddress.state');}
   get billingAddressIndex(){return this.checkoutFormGroup.get('billingAddress.index');}
   get billingAddressCountry(){return this.checkoutFormGroup.get('billingAddress.country');}
+
+  get creditCardType(){return this.checkoutFormGroup.get('creditCard.cardType');}
+  get creditCardNameOnCard(){return this.checkoutFormGroup.get('creditCard.nameOnCard');}
+  get creditCardNumber(){return this.checkoutFormGroup.get('creditCard.cardNumber');}
+  get creditCardSecurityCode(){return this.checkoutFormGroup.get('creditCard.securityCode');}
 
   copyShippingAddressToBillingAddress(event) {
 
