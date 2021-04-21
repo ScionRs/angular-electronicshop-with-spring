@@ -224,6 +224,7 @@
         </div>
         <div class="col-md-9">
           <input formControlName="namedOnCard" type="text">
+
         </div>
       </div>
 
@@ -234,7 +235,7 @@
         <div class="col-md-9">
           <input formControlName="cardNumber" type="text">
           <div *ngIf="creditCardNumber.invalid && (creditCardNumber.dirty || creditCardNumber.touched)"  class="validation_error">
-            <div *ngIf="creditCardSecurityCode.errors.required">Поле не должно быть пустым.</div>
+            <div *ngIf="creditCardNumber.errors.required">Поле не должно быть пустым.</div>
             <div *ngIf="creditCardNumber.errors.pattern">Минимум 16 знаков.</div>
           </div>
         </div>
@@ -275,15 +276,14 @@
           </div>
         </div>
       </div>
+    <div class="btn_checkout justify-content-center">
+      <button type="submit">Купить</button>
+    </div>
   </form>
 
   <div>
     <h3>Итог:</h3>
     <p>Общее количество: {{totalQuantity}}</p>
     <p>Итоговая цена: {{totalPrice}}₽</p>
-  </div>
-
-  <div class="btn_checkout justify-content-center">
-    <button type="submit">Купить</button>
   </div>
 </div>

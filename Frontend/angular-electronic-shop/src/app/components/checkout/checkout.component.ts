@@ -5,6 +5,11 @@ import {Country} from '../../common/country';
 import {State} from '../../common/state';
 import {CustomValidators} from '../../validators/custom-validators';
 import {CartService} from '../../services/cart.service';
+import {CheckoutService} from '../../services/checkout.service';
+import {Router} from '@angular/router';
+import {Order} from '../../common/order';
+import {OrderItem} from '../../common/order-item';
+import {Purchase} from '../../common/purchase';
 
 @Component({
   selector: 'app-checkout',
@@ -25,7 +30,8 @@ export class CheckoutComponent implements OnInit {
   shippingAddressStates: State[] = [];
   billingAddressStates: State[] = [];
   constructor(private formBuilder: FormBuilder,private formService: FormService,
-              private cartService: CartService) { }
+              private cartService: CartService, private checkoutService: CheckoutService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.reviewCartDetails();
@@ -51,7 +57,7 @@ export class CheckoutComponent implements OnInit {
       }),
       creditCard: this.formBuilder.group({
         cardType: new FormControl('',[Validators.required]),
-        namedOnCard: new FormControl('',[Validators.required]),
+        namedOnCard: [''],
         cardNumber: new FormControl('',[Validators.required, Validators.pattern('[0-9]{16}')]),
         securityCode: new FormControl('',[Validators.required, Validators.pattern('[0-9]{3}')]),
         expirationMonth: [''],
@@ -78,6 +84,7 @@ export class CheckoutComponent implements OnInit {
 
     this.formService.getCountries().subscribe(
       data => {
+        console.log("Retrieved countries: " + JSON.stringify(data));
         this.countries = data;
       }
     );
@@ -122,10 +129,52 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.checkoutFormGroup.get('customer').value);
+
     if (this.checkoutFormGroup.invalid){
       this.checkoutFormGroup.markAllAsTouched();
+      return;
     }
+
+    let order = new Order();
+    order.totalPrice = this.totalPrice;
+    order.totalQuantity = this.totalQuantity;
+
+    const cartItems = this.cartService.cartItems;
+
+    let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
+
+    let purchase = new Purchase();
+
+    purchase.customer = this.checkoutFormGroup.controls['customer'].value;
+
+    purchase.shippingAddress = this.checkoutFormGroup.controls['shippingAddress'].value;
+    const shippingState: State = JSON.parse(JSON.stringify(purchase.shippingAddress.state));
+    const shippingCountry: Country = JSON.parse(JSON.stringify(purchase.shippingAddress.country));
+    purchase.shippingAddress.state = shippingState.name;
+    purchase.shippingAddress.country = shippingCountry.name;
+
+    // billingAddress
+    purchase.billingAddress = this.checkoutFormGroup.controls['billingAddress'].value;
+    const billingState: State = JSON.parse(JSON.stringify(purchase.billingAddress.state));
+    const billingCountry: Country = JSON.parse(JSON.stringify(purchase.billingAddress.country));
+    purchase.billingAddress.state = billingState.name;
+    purchase.billingAddress.country = billingCountry.name;
+
+    purchase.order = order;
+    purchase.orderItems = orderItems;
+
+    this.checkoutService.placeOrder(purchase).subscribe(
+      {
+        next: response => {
+          alert(`Ваша покупка прошла успешно.\n Номер покупки: ${response.orderTrackingNumber}`);
+          this.resetCart();
+        },
+        error: err => {
+          alert(`Ошибка: ${err.message}`);
+        }
+      }
+    );
+
   }
 
 
@@ -187,5 +236,14 @@ export class CheckoutComponent implements OnInit {
       totalPrice => this.totalPrice = totalPrice
     );
 
+  }
+
+  resetCart() {
+  this.cartService.cartItems = [];
+  this.cartService.totalPrice.next(0);
+  this.cartService.totalQuantity.next(0);
+
+  this.checkoutFormGroup.reset();
+  this.router.navigateByUrl("/products");
   }
 }

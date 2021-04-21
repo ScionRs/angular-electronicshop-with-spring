@@ -12,7 +12,7 @@ import ru.ravilov.ElectronicShop.service.CheckoutService;
 public class CheckoutController {
 
     private CheckoutService checkoutService;
-    @Autowired
+
     public CheckoutController(CheckoutService checkoutService) {
         this.checkoutService = checkoutService;
     }
