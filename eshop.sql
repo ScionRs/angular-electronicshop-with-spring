@@ -16,6 +16,20 @@
 CREATE DATABASE IF NOT EXISTS `eshop` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci */;
 USE `eshop`;
 
+-- Дамп структуры для таблица eshop.address
+CREATE TABLE IF NOT EXISTS `address` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `city` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `country` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `street` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `zip_code` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- Дамп данных таблицы eshop.address: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `address` DISABLE KEYS */;
+/*!40000 ALTER TABLE `address` ENABLE KEYS */;
+
 -- Дамп структуры для таблица eshop.country
 CREATE TABLE IF NOT EXISTS `country` (
   `id` bigint(20) NOT NULL,
@@ -35,16 +49,71 @@ INSERT INTO `country` (`id`, `code`, `name`, `image`) VALUES
 	(5, 'UA', 'Украина', 'assets/images/country/Ukraine.png');
 /*!40000 ALTER TABLE `country` ENABLE KEYS */;
 
+-- Дамп структуры для таблица eshop.customer
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- Дамп данных таблицы eshop.customer: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+
 -- Дамп структуры для таблица eshop.hibernate_sequence
 CREATE TABLE IF NOT EXISTS `hibernate_sequence` (
   `next_val` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
--- Дамп данных таблицы eshop.hibernate_sequence: ~1 rows (приблизительно)
+-- Дамп данных таблицы eshop.hibernate_sequence: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
 	(1);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
+
+-- Дамп структуры для таблица eshop.orders
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `date_created` datetime(6) DEFAULT NULL,
+  `last_updated` datetime(6) DEFAULT NULL,
+  `order_tracking_number` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `total_price` decimal(19,2) DEFAULT NULL,
+  `total_quantity` int(11) DEFAULT NULL,
+  `billing_address_id` bigint(20) DEFAULT NULL,
+  `customer_id` bigint(20) DEFAULT NULL,
+  `shipping_address_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKqraecqgbbr1p37ic9dr44e2dr` (`billing_address_id`),
+  KEY `FK624gtjin3po807j3vix093tlf` (`customer_id`),
+  KEY `FKh0uue95ltjysfmkqb5abgk7tj` (`shipping_address_id`),
+  CONSTRAINT `FK624gtjin3po807j3vix093tlf` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`),
+  CONSTRAINT `FKh0uue95ltjysfmkqb5abgk7tj` FOREIGN KEY (`shipping_address_id`) REFERENCES `address` (`id`),
+  CONSTRAINT `FKqraecqgbbr1p37ic9dr44e2dr` FOREIGN KEY (`billing_address_id`) REFERENCES `address` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- Дамп данных таблицы eshop.orders: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+
+-- Дамп структуры для таблица eshop.order_item
+CREATE TABLE IF NOT EXISTS `order_item` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `image_url` varchar(255) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `unit_price` decimal(19,2) DEFAULT NULL,
+  `order_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKt4dc2r9nbvbujrljv3e23iibt` (`order_id`),
+  CONSTRAINT `FKt4dc2r9nbvbujrljv3e23iibt` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- Дамп данных таблицы eshop.order_item: ~0 rows (приблизительно)
+/*!40000 ALTER TABLE `order_item` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_item` ENABLE KEYS */;
 
 -- Дамп структуры для таблица eshop.product
 CREATE TABLE IF NOT EXISTS `product` (
@@ -121,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `state` (
   CONSTRAINT `FKghic7mqjt6qb9vq7up7awu0er` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
--- Дамп данных таблицы eshop.state: ~19 rows (приблизительно)
+-- Дамп данных таблицы eshop.state: ~18 rows (приблизительно)
 /*!40000 ALTER TABLE `state` DISABLE KEYS */;
 INSERT INTO `state` (`id`, `name`, `country_id`) VALUES
 	(1, 'Московская область', 1),
